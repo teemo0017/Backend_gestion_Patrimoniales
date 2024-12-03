@@ -9,6 +9,8 @@ import java.util.Date;
 @Data
 public class BienRequest {
 
+    private Long id;
+
     @NotNull
     private String nombre;
 

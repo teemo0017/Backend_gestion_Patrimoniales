@@ -30,4 +30,5 @@ public class BienResponse {
     private String usuarioCreador; // ID del usuario que registra el bien
 
     private String usuarioResponsable; // ID del usuario responsable (opcional)
+
 }

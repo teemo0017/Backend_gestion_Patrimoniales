@@ -48,4 +48,14 @@ public class BienesController {
         this.bienesService.borrarBien(id);
     }
 
+    @GetMapping(path = "buscarbien/{id}")
+    public BienRequest buscarBien(@PathVariable Long id) {
+        return this.bienesService.buscarBien(id);
+    }
+
+    @PostMapping(path = "/actualizarbien")
+    public ResponseEntity<Void> actualizarBien(@RequestBody BienRequest request) {
+        this.bienesService.actualizarBien(request);
+        return ResponseEntity.ok().build();
+    }
 }

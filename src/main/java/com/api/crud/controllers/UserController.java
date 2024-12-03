@@ -18,9 +18,14 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping(path = "findallusers")
+    @GetMapping(path = "findresponsables")
     public List<ResponsableResponse> getUsers() {
         return this.userService.getResponsables();
+    }
+
+    @GetMapping(path = "findallusers")
+    public List<UserResponse> getAllUsersRegisters() {
+        return this.userService.getAllUsers();
     }
 
     @PostMapping

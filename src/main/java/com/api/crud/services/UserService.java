@@ -32,6 +32,25 @@ public class UserService {
 
     }
 
+    public List<UserResponse> getAllUsers() {
+        List<UserResponse> userResponseList = new ArrayList<>();
+        List<UserModels> userModels = userRepository.findAll();
+
+        for (UserModels var : userModels) {
+            UserResponse userResponse = new UserResponse();
+            userResponse.setRole(var.getRole());
+            userResponse.setAge(var.getAge());
+            userResponse.setEmail(var.getEmail());
+            userResponse.setCountry(var.getCountry());
+            userResponse.setFirstName(var.getFirstName());
+            userResponse.setLastName(var.getLastName());
+            userResponse.setPhone(var.getPhone());
+            userResponseList.add(userResponse);
+        }
+        return userResponseList;
+
+    }
+
 
     public UserModels saveUser(UserModels user) {
         return userRepository.save(user);
@@ -48,6 +67,7 @@ public class UserService {
         userResponse.setFirstName(userEncontrador.getFirstName());
         userResponse.setLastName(userEncontrador.getLastName());
         userResponse.setPhone(userEncontrador.getPhone());
+        userResponse.setRole(userEncontrador.getRole());
         return userResponse;
     }
 
